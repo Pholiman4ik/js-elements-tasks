@@ -19,17 +19,20 @@
 */
 
 
-const movieDB = {
-    movies: [
-        "Душа",
-        "Володар Перснів",
-        "Джокер",
-        "Тенет",
-        "Гаррі Поттер і філософський камінь",
-        "Гаррі Поттер і таємна кімната"
-    ]
-};
+const ads = document.querySelector('.promo__adv'),
+content = document.querySelector('.promo__content');
 
-hh\
 
+content.style.width = 'calc(100% - 300px)';
+
+
+const viewedFilms = document.querySelector('.promo__interactive-list');
+viewedFilms.innerHTML = "";
+movieDB.movies.sort();
+
+movieDB.movies.forEach(function(film, i){
+viewedFilms.innerHTML += “<li class="promo_interactive-item">${++i}. ${film}
+<div class="delete"></div>
+</li>;
+});
 
